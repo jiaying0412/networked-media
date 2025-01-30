@@ -1,0 +1,73 @@
+.ear-container {
+    display: flex;         
+    justify-content: center; 
+    gap: 500px;  
+}
+
+.ear {
+    position: relative;
+    display: inline-block;
+    width: 20vw;  
+    max-width: 300px;
+}
+
+.ear img {
+    width: 100%;  
+    height: auto;
+}
+
+.earring {
+    position: absolute;  
+    width: 22%; 
+    height: auto;
+}
+
+#earring1 {  /* First earring */
+    top: 65%;
+    left: 40%;
+}
+
+#earring2 {  /* Second earring */
+    top: 75%;
+    left: 50%;
+}
+
+#earring3 {  /* Third earring */
+    top: 70%;
+    left: 40%;
+}
+
+#earring4 {  /* Fourth earring */
+    top: 85%;
+    left: 35%;
+}
+
+.content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box {
+    border: 2px solid black; 
+    padding: 20px; 
+    width: 80%; 
+    max-width: 600px;
+    text-align: center; 
+    box-sizing: border-box; 
+    border-radius: 8px; 
+}
+
+.part1, .part2{
+    background-color: #f9f4a2; 
+}
+
+.part3, .part4{
+    background-color: #a2c7f9;
+}
+
+p {
+    font-size: 18px; 
+    color: #333; 
+}
