@@ -1,0 +1,14 @@
+<header>
+    <a href="/" class="title">FLAVORS & FORTUNES</a>
+    <nav class="navbar">
+            <a href="/about">About</a>
+        <% if (typeof loggedInUser !== 'undefined') { %>
+            <a href="/restaurant">Restaurant Archive</a>
+            <a href="/recipe">Recipe Archive</a>
+            <a href="/form">Add Review</a>
+            <a href="/logout" class="btnLogin-popup">Logout</a>
+        <% } else { %>
+            <a href="/login" class="btnLogin-popup">Login</a>
+        <% } %>
+    </nav>
+</header>

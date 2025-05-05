@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Restaurants Page</title>
+        <link rel="stylesheet" href="/archive.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="/archive.js"></script>
+    </head>
+    <body>
+        <%- include('nav.ejs') %> 
+        <main class="grid-background">
+        <h1><em>~ RESTAURANT ARCHIVE ~</em></h1>   
+        <div class="chopsticks">
+            <img id="chopsticks-img" src="/assets/chopsticks.png">
+            <div class="tooltip"><em>CLICK me!!! GRAB the dishes you want to try to "EAT" them.</em></div>
+        </div>    
+        <div class="chopCursor">
+            <img id="chopCursor-img" src="/assets/chopsticks.png">
+        </div>
+        <div class="post-container">
+            <% resPosts.forEach(post => { %>
+                <div class="allPosts">
+                    <% if (post.imgUrl) { %>
+                        <img 
+                            src="<%= post.imgUrl %>" 
+                            alt="food img" 
+                            class="food"
+                            data-dish="<%= post.dish %>" 
+                            data-imgurl="<%= post.imgUrl %>" 
+                            data-url="<%= post.url %>"
+                        >
+                    <% } %>
+                    <div class="postDetails">
+                        <div class="text">
+                    <h2><%= post.dish %></h2>
+                    <p><em>posted: </em><%= post.date %></p>
+                    <p><%= post.review %></p>
+                    <% if (!Array.isArray(post.flavors)) { post.flavors = [post.flavors]; } %>
+                    <p><%= post.flavors.join(' ') %><%=post.other %></p>
+                    <!-- <% console.log(post.isOtherChecked) %> -->
+                    <p><%= post.rating%></p>
+                    <% if (post.url) { %>
+                        <a href="<%= post.url %>">VISIT LINK -></a>
+                    <% } %>
+                    </div>
+                </div>
+                </div>
+            <% })%> 
+        </div>
+        </main>
+        <% /* GSAP CDN */ %>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+        <footer>
+            <p>© 2025 FLAVORS & FORTUNES. <br>Guided by the All-Knowing Golden Masters.</p>
+        </footer>
+    </body>
+</html>

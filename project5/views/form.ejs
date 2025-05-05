@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Review Page</title>
+        <link rel="stylesheet" href="/form.css">
+        <script src="/form.js"></script>
+    </head>
+    <body>
+        <%- include('nav.ejs') %>  
+        <div class="vertical-text line-left">*<br>r<br>e<br>v<br>i<br>e<br>w<br><br> a<br> 
+            <br>d<br>i<br>s<br>h<br>, <br>a<br>n<br>d<br> <br>y<br>o<br>u<br> 
+            <br>s<br>h<br>a<br>l<br>l <br><br>f<br>i<br>n<br>d
+        </div>
+        <form id="form" method="POST" action="/submit" enctype="multipart/form-data">
+            <input type="text" id="dish" name="dish" placeholder="Name of the Dish">
+            <div class="table-container part1">
+                <table class="review-table">
+                    <% /* Restaurant or Recipe */ %>
+            <tr>
+                <th colspan="4">1. FROM RESTAURANT or RECIPE?</th>
+            </tr>
+            <tr>
+                <td class="R">Restaurant</td>
+                <td><input type="checkbox" name="category" value="Restaurant"></td>
+                <td class="R">Recipe</td>
+                <td><input type="checkbox" name="category" value="Recipe"></td>
+            </tr>
+            <% /* Flavors Section */ %>
+                    <tr>
+                        <th colspan="4">2. FLAVORS & DIET (check all that apply)</th>
+                    </tr>
+                    <tr>
+                        <td class="flavor">Spicy</td>
+                        <td><input type="checkbox" name="flavor" value="#spicy"></td>
+                        <td class="flavor">Vegan</td>
+                        <td><input type="checkbox" name="flavor" value="#vegan"></td>
+                    </tr>
+                    <tr>
+                        <td class="flavor">Savory</td>
+                        <td><input type="checkbox" name="flavor" value="#savory"></td>
+                        <td class="flavor">Vegetarian</td>
+                        <td><input type="checkbox" name="flavor" value="#vegetarian"></td>
+                    </tr>
+                    <tr>
+                        <td class="flavor">Sour</td>
+                        <td><input type="checkbox" name="flavor" value="#sour"></td>
+                        <td class="flavor">Dairy-free</td>
+                        <td><input type="checkbox" name="flavor" value="#dairy-free"></td>
+                    </tr>
+                    <tr>
+                        <td class="flavor">Sweet</td>
+                        <td><input type="checkbox" name="flavor" value="#sweet"></td>
+                        <td class="flavor">Gluten-free</td>
+                        <td><input type="checkbox" name="flavor" value="#gluten-free"></td>
+                    </tr>
+                    <tr>
+                        <td class="flavor">Bitter</td>
+                        <td><input type="checkbox" name="flavor" value="#bitter"></td>
+                        <td class="flavor"><input type="text" name="other" placeholder="Other" id="other"></td>
+                        <td><input type="checkbox" name="isOtherChecked"></td>
+                    </tr>
+                </table>
+            </div>
+        
+            <div class="table-container part2">
+                <table class="review-table">
+                    <% /* Rating Section */ %>
+                    <tr>
+                        <th colspan="5">3. RATE it out of '5 bowls of rice'</th>
+                    </tr>
+                    <tr class="rating-row">
+                        <td class="rice">
+                            <input type="radio" name="rating" value="🍚" id="rate1">
+                            <label for="rate1">🍚</label>
+                        </td>
+                        <td class="rice">
+                            <input type="radio" name="rating" value="🍚🍚" id="rate2">
+                            <label for="rate2">🍚</label>
+                        </td>
+                        <td class="rice">
+                            <input type="radio" name="rating" value="🍚🍚🍚" id="rate3">
+                            <label for="rate3">🍚</label>
+                        </td>
+                        <td class="rice">
+                            <input type="radio" name="rating" value="🍚🍚🍚🍚" id="rate4">
+                            <label for="rate4">🍚</label>
+                        </td>
+                        <td class="rice">
+                            <input type="radio" name="rating" value="🍚🍚🍚🍚🍚" id="rate5">
+                            <label for="rate5">🍚</label>
+                        </td>
+                    </tr>
+                        <% /* Review Section */ %>
+               <tr>
+                <th colspan="5">4. REVIEW</th>
+            </tr>
+            <tr>
+                <td colspan="5"><textarea max-length = "800" name="review" placeholder="Record the tale of your tasting experience..." required></textarea></td>
+            </tr>
+       
+        <% /* Photo Section */ %>
+            <tr>
+                <th colspan="5">5. ADD PHOTO</th>
+            </tr>
+            <tr>
+                <td colspan="5"><input type="file" name="photo" accept="image/*" required></td>
+            </tr>
+        <% /* Link Section */ %>
+            <tr>
+                <th colspan="5">6. LINK</th>
+            </tr>
+            <tr>
+                <td colspan="5"><input type="url" name="link" placeholder="Reveal the path to this sacred dish" required></td>
+            </tr>
+        </table>
+        </div> 
+        <input type="submit" value="Offer Review to the Masters"> 
+        </form>
+        <div class="vertical-text right-line">*<br>t<br>h<br>e<br><br> s<br>p<br>e<br>c<br>i<br>a<br>l<br><br>
+            m<br>e<br>s<br>s<br>a<br>g<br>e<br><br> 
+            a<br>w<br>a<br>i<br>t<br>s<br><br> b<br>e<br>h<br>i<br>n<br>d
+        </div>
+        <footer>
+            <p>© 2025 FLAVORS & FORTUNES. <br>Guided by the All-Knowing Golden Masters.</p>
+        </footer>
+    </body>
+
+</html>   
