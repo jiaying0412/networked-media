@@ -1,0 +1,163 @@
+@font-face {
+    font-family: 'ChineseTakeaway';
+    src: url('/assets/CHINESETAKEAWAY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:" Cormorant Garamond", serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #E83929;
+    position: relative;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    background: #FDD131;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.title {
+    font-family: 'ChineseTakeaway', serif;
+    letter-spacing: 4px;
+    font-size: 4.5vh;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out; 
+    text-shadow: 5px 7px 2px rgba(253, 209, 49, 0.8);
+    font-weight: bold;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #E83929;
+}
+
+body {
+    background-color: #F1EAD1;
+    font-size: 2.2vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .btnLogin-popup {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #E83929;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #E83929;
+    margin-left: 40px;
+    transition: .5s;
+    font-size: 2.2vh;
+}
+
+.navbar .btnLogin-popup:hover {
+    background: #FDD131;
+}
+
+.img-container {
+    position: relative; 
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    height: 60vh;         
+}
+
+img {
+    width: 35vw; 
+    max-width: 800px;
+    height: auto;
+    transition: transform 0.2s ease-in-out; 
+    z-index: 10;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tagline {
+    position: absolute; 
+    top: 65%; 
+    left: 67%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    color: #5D4D42; 
+    text-align: center;
+    visibility: hidden;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.anim-typewriter {
+    position: relative;
+    display: inline-block;
+    font-size: 3.2vh;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: 5px 4px 2px rgba(253, 209, 49, 1); 
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background-color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2px;
+    margin-left: 2px;
+    animation: blink 0.12s infinite steps(1);
+    vertical-align: bottom;
+}  
+
+footer {
+    background-color: #E83929; 
+    color: #F2EDDD; 
+    text-align: center;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}

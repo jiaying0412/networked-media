@@ -1,0 +1,264 @@
+@font-face {
+    font-family: 'ChineseTakeaway';
+    src: url('/assets/CHINESETAKEAWAY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:" Cormorant Garamond", serif;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #E83929;
+    position: relative;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    background: #FDD131;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin-popup {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #E83929;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #E83929;
+    margin-left: 40px;
+    transition: .5s;
+    font-size: 2.2vh;
+}
+
+.navbar .btnLogin-popup:hover {
+    background: #FDD131;
+}
+
+.title {
+    font-family: 'ChineseTakeaway', serif;
+    letter-spacing: 4px;
+    font-size: 4.5vh;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out; 
+    text-shadow: 5px 7px 2px rgba(253, 209, 49, 0.8);
+    font-weight: bold;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #E83929;
+}
+
+body {
+    background-color: #F1EAD1;
+    width: 100%;
+    min-height: 100vh;
+    font-family:" Cormorant Garamond", serif;
+    font-size: 2.2vh;
+    cursor: pointer;
+    overflow-x: hidden;
+}
+
+.title:hover {
+    transform: scale(1.05);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 40vw;
+    height: 170vh;
+    margin: 50px auto;
+    box-shadow: 10px 10px 5px rgba(93, 77, 66, 0.5);
+    min-width: 580px;
+}
+
+#dish {
+    width: 80%;
+    font-size: 2rem;
+    border: hidden;
+    outline: none;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    color:#E83929;
+    margin: 24px;
+}
+
+.vertical-text {
+    position: absolute;
+    text-align: center;
+    top: 80%;
+    transform: rotate(270deg);
+    writing-mode: vertical-rl;
+    background: rgba(253, 209, 49, 0.6);
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #5D4D42;
+}
+
+.left-line {
+    left: 0; 
+}
+
+.right-line {
+    right: -10px; 
+}
+
+.table-container {
+    width: 86%;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.part1 {
+    height: 32%; 
+}
+
+.part2 {
+    height: 65%; 
+}
+
+.review-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    color: #5D4D42;
+    margin: 0;
+    padding: 0;
+}
+
+th {
+    color: white;
+    padding: 0;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-size: 1.1em;
+    background-color: #E83929;
+    border: 2px solid #E83929;
+}
+
+td {
+    padding: 0;
+    font-size: 0.95em;
+    border: 2px solid #E83929;
+    text-align: center;
+}
+
+.review-table td.flavor{
+    width: 38%; 
+}
+
+#other {
+    border: hidden;
+    text-align: center;
+    font-size: 1em;
+    color: #5D4D42;
+}
+
+.rating-row td {
+    width: 20%;
+    height: 80px;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+textarea {
+    width: 95%;
+    height: 100px;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    resize: none;
+    padding: 10px;
+    font-family: inherit;
+}
+
+textarea::placeholder {
+    line-height: normal;
+}
+
+
+input[type="file"], 
+input[type="url"] {
+    width: 95%;
+    padding: 10px;
+    font-size: 1em;
+    border: hidden;
+    outline: none;
+    font-family: inherit;
+}
+
+input[type="file"] {
+    height: 120px;
+}
+
+input[type="url"] {
+    height: 24px;
+}
+
+input[type="submit"] {
+    margin: 30px;
+    padding: 15px;
+    font-size: 1em;
+    color: white;
+    background-color:#E83929;
+    border: none;
+    outline: none;
+}
+
+footer {
+    background-color: #E83929; 
+    color: #F2EDDD; 
+    text-align: center;
+    padding: 30px;
+    position: relative; 
+    width: 100%;
+    margin-top: 60px; 
+}

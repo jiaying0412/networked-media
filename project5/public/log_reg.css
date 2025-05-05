@@ -1,0 +1,288 @@
+@font-face {
+    font-family: 'ChineseTakeaway';
+    src: url('/assets/CHINESETAKEAWAY.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:" Cormorant Garamond", serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #E83929;
+    position: relative;
+    margin-left: 40px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    transform-origin: right;
+    background: #FDD131;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .3s;
+}
+
+.navbar a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navbar .btnLogin-popup {
+    display: inline-flex;
+    visibility: hidden;
+    text-decoration: none;
+    padding: 15px;
+    width: 100px;
+    height: 40px;
+    margin-left: 40px;
+}
+
+.title {
+    font-family: 'ChineseTakeaway', serif;
+    letter-spacing: 4px;
+    font-size: 4.5vh;
+    margin: 10px;
+    transition: transform 0.2s ease-in-out; 
+    text-shadow: 5px 7px 2px rgba(253, 209, 49, 0.8);
+    font-weight: bold;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #E83929;
+}
+
+body {
+    font-size: 2.2vh;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('assets/bg.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.img-container {
+    position: relative; 
+    display: flex;
+    justify-content: center;  
+    align-items: center;     
+    height: 60vh;         
+}
+
+img {
+    width: 35vw; 
+    max-width: 800px;
+    height: auto;
+    transition: transform 0.2s ease-in-out; 
+    z-index: 10;
+}
+
+img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.tagline {
+    position: absolute; 
+    top: 65%; 
+    left: 67%; 
+    transform: translate(-50%, -50%); 
+    z-index: 2; 
+    color: #5D4D42; 
+    text-align: center;
+    visibility: hidden;
+    overflow: hidden;
+    margin: 10px;
+}
+
+.wrapper {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); 
+    width: 380px;
+    padding: 30px 40px; 
+    margin-bottom: 60px;
+    overflow: hidden;
+    transition: transform .18s ease-in-out, height .18s ease-in-out;
+}
+
+.wrapper.active-popup {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 40;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    color:#E83929;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.wrapper .icon-close i {
+    font-size: 2.2em;
+    cursor: pointer;
+}
+
+.wrapper .form-box.login {
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: transform 0.18s ease-in-out;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease-in-out;
+    transform: translate(0, 0);
+}
+
+.wrapper h1 {
+    font-family: 'ChineseTakeaway', serif;
+    letter-spacing: 6px;
+    font-size: 36px;
+    text-align: center;
+    color: #E83929;
+    margin-bottom: 55px;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none; 
+    border: 2px solid rgba(93, 77, 66, .5);
+    border-radius: 15px;
+    font-size: 18px;
+    color: #E83929;
+    padding: 10px 45px 10px 10px;
+}
+
+.input-box input::placeholder {
+    color: #5D4D42;
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color:#E83929;
+}
+
+.wrapper .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin: -15px 0 15px;
+    color: #5D4D42;
+}
+
+.wrapper .remember-forgot a {
+    color: #5D4D42; 
+    font-weight: 600;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #E83929;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.wrapper .register-link {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.register-link p a {
+    color: #5D4D42;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .login-link {
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.login-link p a {
+    color: #5D4D42;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link p a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #E83929; 
+    color: #F2EDDD; 
+    text-align: center;
+    padding: 30px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
